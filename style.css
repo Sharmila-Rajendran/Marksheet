@@ -1,0 +1,134 @@
+section{
+    margin:50px 150px;
+    border: 1px solid black;
+}
+
+.section{
+    margin: 30px;
+    border: 5px solid brown;
+    padding: 20px;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    gap: 350px;
+}
+
+.clg-name{
+    padding-top: 20px;
+    text-align: center;
+    color: maroon;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.clg-assoc{
+    padding-top: 20px;
+    text-align: center;
+    color: maroon;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.annual{
+    padding-top: 20px;
+    text-align: center;
+    color: rgb(208, 57, 2);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.col{
+    font-weight: bold;
+    text-align: center;
+    border: 3px solid brown;
+    border-right: 0.5px solid brown;
+    border-bottom: 0.5px solid brown;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: cornsilk;
+}
+
+.col p{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.col h3{
+    font-weight: bold;
+}
+
+.code{
+    border-right: 3px solid brown;
+}
+
+.auth{
+    border-bottom: 3px solid brown;
+}
+
+.auth1{
+    border-right: 3px solid brown;
+}
+
+.col-6 p{
+    color: maroon;
+}
+
+.col-3 p{
+    color: maroon;
+}
+
+.table{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.table2 {
+    padding: 20px;
+    border: 3px solid brown;
+}
+
+.table2 th, .table2 td {
+    border: 3px solid brown;
+    padding: 20px;
+    background-color: cornsilk;
+
+}
+
+.table2 input {
+    width: 100%;
+    border: none;
+    text-align: center;
+    background-color: cornsilk;
+}
+
+.table2 th{
+    color: maroon;
+}
+
+.table2 td{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#sp{
+ color: black;
+}
+
+.footer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(182, 82, 42); 
+}
+#anitha{
+    color: black;
+}
+#p,#sub{
+    margin-top: 25px;
+}
+
+
+
+
+
