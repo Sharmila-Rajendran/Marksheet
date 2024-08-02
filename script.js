@@ -5,42 +5,42 @@ document.addEventListener("DOMContentLoaded", function() {
     const totalinwords = document.querySelectorAll(".words");
     const grandtotElem = document.querySelector(".grandtot span");
     const grandwords = document.querySelector(".inwords span");
-    const resultElem = document.querySelector(".res span");
-    const percentageElem = document.querySelector(".perc span");
-    const gradeElem = document.querySelector(".grade span");
+    const result = document.querySelector(".res span");
+    const percentage = document.querySelector(".perc span");
+    const grade = document.querySelector(".grade span");
   
     theory.forEach((input, index) => {
-        input.addEventListener("input", calculateTotals);
-        practicals[index].addEventListener("input", calculateTotals);
+        input.addEventListener("input", Totals);
+        practicals[index].addEventListener("input", Totals);
     });
   
-    function calculateTotals() {
+    function Totals() {
         let grandTotalMarks = 0;
         theory.forEach((theory, index) => {
             const pracInput = practicals[index];
             const totElem = total[index];
-            const totalWordsElem = totalinwords[index];
+            const totalWords = totalinwords[index];
             const theoryMarks = parseInt(theory.value) || 0;
             const practicalMarks = parseInt(pracInput.value) || 0;
             const totalMarks = theoryMarks + practicalMarks;
             totElem.textContent = totalMarks;
-            totalWordsElem.textContent = num2words(totalMarks);
+            totalWords.textContent = num2words(totalMarks);
             grandTotalMarks += totalMarks;
         });
         grandtotElem.textContent = grandTotalMarks;
         grandwords.textContent = num2words(grandTotalMarks);
-        calculateResult(grandTotalMarks);
+        Result(grandTotalMarks);
     }
   
-    function calculateResult(grandTotalMarks) {
+    function Result(grandTotalMarks) {
         const maxTotal = theory.length * 100;
         const perc = (grandTotalMarks / maxTotal) * 100;
-        resultElem.textContent = perc >= 40 ? "Pass" : "Fail";
-        percentageElem.textContent = perc.toFixed(2) + "%";
-        gradeElem.textContent = calculateGrade(perc);
+        result.textContent = perc >= 40 ? "Pass" : "Fail";
+        percentage.textContent = perc.toFixed(2) + "%";
+        grade.textContent = Grade(perc);
     }
   
-    function calculateGrade(percentage) {
+    function Grade(percentage) {
         if (percentage >= 95) return "O";
         if (percentage >= 90) return "A+";
         if (percentage >= 85) return "A";
@@ -73,19 +73,19 @@ document.addEventListener("DOMContentLoaded", function() {
         let i = 0;
         while (num > 0) {
             if (num % 1000 !== 0) {
-                words = helper(num % 1000) + " " + thousands[i] + " " + words;
+                words = conversion(num % 1000) + " " + thousands[i] + " " + words;
             }
             num = Math.floor(num / 1000);
             i++;
         }
         return words.trim();
   
-        function helper(num) {
+        function conversion(num) {
             if (num === 0) return "";
             if (num < 10) return ones[num];
             if (num < 20) return teens[num - 10];
-            if (num < 100) return tens[Math.floor(num / 10)] + " " + helper(num % 10);
-            return ones[Math.floor(num / 100)] + " Hundred" + " " + helper(num % 100);
+            if (num < 100) return tens[Math.floor(num / 10)] + " " + conversion(num % 10);
+            return ones[Math.floor(num / 100)] + " Hundred" + " " + conversion(num % 100);
         }
     }
 });
