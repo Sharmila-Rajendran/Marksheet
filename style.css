@@ -98,6 +98,10 @@ header{
     background-color: cornsilk;
 }
 
+.table2 input:focus{
+    border: none;
+}
+
 .table2 th{
     color: maroon;
 }
